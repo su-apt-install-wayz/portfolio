@@ -186,14 +186,13 @@ header {
   transition: 100ms;
   width: 80px;
   vertical-align: middle;
+  transition: 200ms;
 }
 
 .logo:hover{
-  transform: rotate(-15deg);
-  -moz-transform:rotate(-15deg);
-  -webkit-transform:rotate(-15deg);
-  -o-transform:rotate(-15deg);
-  transition: 100ms;
+  transform: scale(1.1);
+  transition: 500ms;
+  transition-timing-function: cubic-bezier(.75, -3, .25, 4);
 }
 
 .btn-item {
