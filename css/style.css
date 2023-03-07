@@ -518,7 +518,7 @@ footer a {
 .liste-certifs {
   margin: 30px auto;
   width: 80vw;
-  max-width: 1600px;
+  max-width: 1400px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -528,7 +528,7 @@ footer a {
 .certif {
   position: relative;
   margin: 30px auto;
-  width: 400px;
+  width: 350px;
   height: 350px;
   background: var(--darkblue);
   color: white;
