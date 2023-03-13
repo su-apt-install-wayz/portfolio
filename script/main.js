@@ -1,101 +1,22 @@
-const menuBtn = document.querySelector('.menu-btn');
-const burgerItem1 = document.querySelector('.burger-item1');
-const burgerItem2 = document.querySelector('.burger-item2');
-const burgerItem3 = document.querySelector('.burger-item3');
-const burgerItem4 = document.querySelector('.burger-item4');
-const corpsburger = document.querySelector('.corps-burger');
-const header = document.querySelector('header');
-const body = document.querySelector('body');
-
-const topbtn = document.querySelector('#topbtn');
+const btnMenu = document.getElementById('menu'),
+    btnClose = document.getElementById('close'),
+    navbar = document.getElementById('nav_list'),
+    body = document.getElementById('body');
 
 
+function navbarMobile(event) {
+    if(event === 'open') {
+        btnMenu.classList.remove('active');
+        btnClose.classList.add('active');
 
-// Fonction Ouvrir bouton burger
+        navbar.classList.add('active');
+        body.classList.add('overflow');
 
-let menuOpen = false;
+    } else if (event === 'close'){
+        btnMenu.classList.add('active');
+        btnClose.classList.remove('active');
 
-menuBtn.addEventListener('click', () => {
-  if(!menuOpen) {
-    menuBtn.classList.add('open');
-    corpsburger.classList.add('corps-burger-open');
-    header.classList.add('btn-open-nav');
-    body.classList.add('body-null');
-    menuOpen = true;
-  } 
-  
-  else {
-    menuBtn.classList.remove('open');
-    corpsburger.classList.remove('corps-burger-open');
-    header.classList.remove('btn-open-nav');
-    body.classList.remove('body-null');
-    menuOpen = false;
-  }
-});
-
-
-
-// Fonction clic sur chaque élément du burger
-
-burgerItem1.addEventListener('click', () => {
-    menuBtn.classList.remove('open');
-    corpsburger.classList.remove('corps-burger-open');
-    header.classList.remove('btn-open-nav');
-    body.classList.remove('body-null');
-    menuOpen = false;
-});
-
-burgerItem2.addEventListener('click', () => {
-  menuBtn.classList.remove('open');
-  corpsburger.classList.remove('corps-burger-open');
-  header.classList.remove('btn-open-nav');
-  body.classList.remove('body-null');
-  menuOpen = false;
-});
-
-burgerItem3.addEventListener('click', () => {
-  menuBtn.classList.remove('open');
-  corpsburger.classList.remove('corps-burger-open');
-  header.classList.remove('btn-open-nav');
-  body.classList.remove('body-null');
-  menuOpen = false;
-});
-
-burgerItem4.addEventListener('click', () => {
-  menuBtn.classList.remove('open');
-  corpsburger.classList.remove('corps-burger-open');
-  header.classList.remove('btn-open-nav');
-  body.classList.remove('body-null');
-  menuOpen = false;
-});
-
-
-// Fonction scroll
-
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 100) {
-        topbtn.classList.add('gotopbtn-scroll');
+        navbar.classList.remove('active');
+        body.classList.remove('overflow');
     }
-    
-    else {
-        topbtn.classList.remove('gotopbtn-scroll');
-    }
-});
-
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
-
-  reveals.forEach((reveal) => {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveal.getBoundingClientRect().top;
-      var elementVisible = 100;
-
-      if(elementTop < windowHeight - elementVisible) {
-          reveal.classList.add("active");
-      } else {
-          reveal.classList.remove("active");
-      }
-  });
 }
-
-window.addEventListener("scroll", reveal);

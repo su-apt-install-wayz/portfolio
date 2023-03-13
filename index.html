@@ -8,22 +8,21 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./ressources/icone.png" type="image/x-icon"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </head>
-<body>
+<body id="body">
 
   <nav>
     <img class="logo" src="./ressources/logo.png" alt="">
-    <div class="nav_list">
-      <a href="">Accueil</a>
-      <a href="">études</a>
-      <a href="">compétences</a>
-      <a href="">projets</a>
-      <a href="">certifications</a>
+    <div id="nav_list" class="nav_list">
+      <a class="links" href="">Accueil</a>
+      <a class="links" href="">études</a>
+      <a class="links" href="">compétences</a>
+      <a class="links" href="">projets</a>
+      <a class="links" href="">certifications</a>
     </div>
     <div class="burger">
-      <i class="ri-menu-line menu"></i>
-      <i class="ri-close-line close"></i>
+      <i id="menu" onclick="navbarMobile('open');" class="ri-menu-line menu active"></i>
+      <i id="close" onclick="navbarMobile('close');" class="ri-close-line close"></i>
     </div>
   </nav>
 
@@ -46,6 +45,8 @@
     </section>
 
   </section>
+
+  <script src="./script/main.js"></script>
   
   <script>
     let section = document.getElementById('sectionNav');

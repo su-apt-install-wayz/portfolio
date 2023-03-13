@@ -47,6 +47,10 @@ body {
   background: var(--bluebackground);
 }
 
+body.overflow {
+  overflow: hidden;
+}
+
 .main {
   margin: 0 auto;
   width: 100%;
@@ -78,21 +82,21 @@ body {
 nav {
   z-index: 999;
   width: 100%;
-  max-width: 800px;
-  height: 80px;
+  height: 100px;
   padding: 1rem;
   position: fixed;
   display: flex;
+  justify-content: center;
   top: 0;
   left: 50%;
   gap: 20px;
-  justify-content: space-between;
   transform: translateX(-50%);
 }
 
 nav .logo {
+  margin: auto;
   transition: 100ms;
-  width: 60px;
+  width: 100px;
   transition: 200ms;
   cursor: pointer;
 }
@@ -104,14 +108,16 @@ nav .logo:hover{
 }
 
 nav .nav_list {
+  margin: auto;
   display: flex;
   width: 100%;
+  max-width: 800px;
   justify-content: flex-end;
   align-items: center;
 }
 
 nav .nav_list a {
-  margin: auto 1rem;
+  margin: 20px auto;
   text-transform: uppercase;
   font-weight: 1000;
   color: white;
@@ -137,19 +143,40 @@ nav .nav_list a:hover::before {
 }
 
 nav .burger {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 45px;
+  display: none;
 }
 
 nav .burger i.menu {
   color: white;
+  display: none;
+  cursor: pointer;
 }
 
 nav .burger i.close {
   color: red;
+  display: none;
+  cursor: pointer;
+}
+
+nav .burger i.menu.active {
+  color: white;
+  display: flex;
+  cursor: pointer;
+}
+
+nav .burger i.close.active {
+  color: red;
+  display: flex;
+  cursor: pointer;
 }
 
 /* --------------------------------- FIN NAV --------------------------------- */
@@ -328,13 +355,39 @@ footer a {
 
 /* --------------------------------- RESPONSIVE --------------------------------- */
 
-@media (max-width:705px) {
+@media (max-width:755px) {
   .accueil .profil {
     flex-direction: column;
   }
 
+  nav .logo {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+
   nav .nav_list {
     display: none;
+    left: -100%;
+    transition: 300ms ease;
+  }
+
+  nav .nav_list.active{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bluebackground);
+    transition: 300ms ease;
+  }
+
+  nav .burger {
+    display: flex;
   }
 
   .accueil .right .photo_profil {
