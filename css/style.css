@@ -271,12 +271,19 @@ footer a {
   -webkit-text-fill-color: transparent;
 }
 
-.accueil .profil .left hr {
-  width: 80%;
-  max-width: 450px;
+.accueil .profil .left h2 span {
+  position: relative;
+  background: var(--gradtitlepink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accueil .profil .left h2 span:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
   height: 2px;
-  outline: none;
-  border: none;
   background: var(--gradtitlegreen);
 }
 
