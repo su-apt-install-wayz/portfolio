@@ -136,6 +136,22 @@ nav .nav_list a:hover::before {
   transition: 300ms ease;
 }
 
+nav .burger {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+nav .burger i.menu {
+  color: white;
+}
+
+nav .burger i.close {
+  color: red;
+}
+
 /* --------------------------------- FIN NAV --------------------------------- */
 
 
@@ -191,7 +207,6 @@ footer a {
   max-width: 1200px;
   display: flex;
   justify-content: space-around;
-  gap: 5%;
   color: white;
 }
 
@@ -200,15 +215,15 @@ footer a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .accueil .profil .right {
   margin: auto;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 }
 
 .accueil .profil .left h1 {
@@ -244,17 +259,17 @@ footer a {
 }
 
 .accueil .profil .left .btn-cv {
-  margin: 10px auto;
+  margin: 10px 5px;
   border: solid 1px var(--lightgreen);
-  width: 15vw;
   z-index: 0;
   max-width: 250px;
   min-width: 160px;
-  height: 5vw;
-  max-height: 60px;
-  min-height: 40px;
+  height: 55px;
   background-color: transparent;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
@@ -283,6 +298,24 @@ footer a {
   transition: all 0.3s ease-in-out;
 }
 
+.accueil .right .photo_profil {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: var(--lightgreen);
+  transform: rotate(5deg);
+  position: relative;
+}
+
+.accueil .right .photo_profil img {
+  position: absolute;
+  bottom: -1px;
+  left: 42%;
+  transform: translate(-50%);
+  width: 100%;
+}
+
 
 
 
@@ -295,8 +328,16 @@ footer a {
 
 /* --------------------------------- RESPONSIVE --------------------------------- */
 
-@media (max-width:650px) {
+@media (max-width:705px) {
   .accueil .profil {
     flex-direction: column;
+  }
+
+  nav .nav_list {
+    display: none;
+  }
+
+  .accueil .right .photo_profil {
+    display: none;
   }
 }
