@@ -227,7 +227,7 @@ footer a {
 }
 
 .accueil .profil .left h1 {
-  font-size: max(8vw,40px);
+  font-size: max(6vw,40px);
   font-family: 'Poppins', sans-serif;
   background: var(--gradtitlegreen);
   opacity: 0.8;
