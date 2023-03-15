@@ -293,9 +293,37 @@ footer a {
 
 .accueil .profil .right {
   margin: auto;
-  width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.accueil .right .liens_vert {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 5px;
+  width: 50px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accueil .right .liens_vert .trait {
+  width: 2px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: var(--lightgreen);
+}
+
+.accueil .right .liens_vert .reseaux {
+  width: 50px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 .accueil .profil .left h1 {
@@ -415,6 +443,14 @@ footer a {
     flex-direction: column;
   }
 
+  .accueil .left .liens {
+    display: none;
+  }
+
+  .accueil .right .liens_vert {
+    display: flex;
+  }
+
   nav .logo {
     position: absolute;
     top: 15px;
@@ -457,7 +493,6 @@ footer a {
     height: 25 0px;
     border-radius: 0;
     background-color: transparent;
-    border-bottom: solid 2px var(--lightgreen);
   }
 
   .accueil .right .photo_profil img {
@@ -468,11 +503,21 @@ footer a {
   }
 }
 
+@media (max-width:625px) {
+  .accueil .right .photo_profil {
+    margin: 5px 5px 5px 10vw;
+  }
+}
+
 @media (max-width:370px) {
   .accueil .right .photo_profil img {
     bottom: 0;
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .accueil .right .photo_profil {
+    margin: 5px 5px 5px 2vw;
   }
 
   .accueil .profil .left .btn-cv {
