@@ -506,6 +506,7 @@ footer a {
 @media (max-width:625px) {
   .accueil .right .photo_profil {
     margin: 5px 5px 5px 10vw;
+    height: 230px;
   }
 }
 
