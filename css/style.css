@@ -72,6 +72,15 @@ body.overflow {
   transition: 1s all ease;
 }
 
+.titre_section {
+  margin: 20px auto;
+  font-weight: 700;
+  font-size: 80px;
+  color: var(--lightgreen);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
 
 
 
@@ -433,9 +442,30 @@ footer a {
 
 
 
+.etudes {
+  margin: 0 auto;
+  display: flex;
+  z-index: 98;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------- RESPONSIVE --------------------------------- */
 
-
+@media (max-height:775px) {
+  .accueil .profil {
+    margin: 80px auto 0;
+  }
+}
 
 @media (max-width:755px) {
   .accueil .profil {
@@ -480,10 +510,6 @@ footer a {
 
   nav .burger {
     display: flex;
-  }
-
-  .accueil .profil {
-    margin: 80px auto 0;
   }
 
   .accueil .right .photo_profil {
