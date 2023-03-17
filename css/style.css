@@ -97,7 +97,7 @@ nav {
 nav .logo {
   margin: auto;
   transition: 100ms;
-  width: 100px;
+  width: 80px;
   transition: 200ms;
   cursor: pointer;
 }
@@ -464,6 +464,7 @@ footer a {
   }
 
   nav .nav_list.active{
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
