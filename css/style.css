@@ -458,6 +458,19 @@ footer a {
   flex-direction: column;
   width: 100%;
   font-size: 12px;
+  position: relative;
+}
+
+.points_gauche {
+  position: absolute;
+  left: 0;
+  top: 50px;
+}
+
+.points_droit {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
 }
 
 .liste-etudes {
@@ -530,6 +543,7 @@ footer a {
   flex-direction: column;
   width: 100%;
   font-size: 12px;
+  position: relative;
 }
 
 .liste-competences {
