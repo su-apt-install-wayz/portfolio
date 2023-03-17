@@ -481,7 +481,9 @@ footer a {
     display: flex;
   }
 
-
+  .accueil .profil {
+    margin: 80px auto 0;
+  }
 
   .accueil .right .photo_profil {
     margin: auto;
