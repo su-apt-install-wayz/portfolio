@@ -20,3 +20,22 @@ function navbarMobile(event) {
         body.classList.remove('overflow');
     }
 }
+
+
+const nav = document.querySelector('#nav');
+
+const onScroll = (event) => {
+    const scrollPosition = event.target.scrollingElement.scrollTop;
+
+    if(scrollPosition >  10) {
+        if(!nav.classList.contains('scroll')) {
+            nav.classList.add('scroll');
+        }
+    } else {
+        if(nav.classList.contains('scroll')) {
+            nav.classList.remove('scroll');
+        }
+    }
+}
+
+document.addEventListener("scroll", onScroll);
