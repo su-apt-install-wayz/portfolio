@@ -84,7 +84,7 @@ body.overflow {
 .points_gauche {
   position: absolute;
   left: 0;
-  top: 100px;
+  top: 140px;
   z-index: -1;
 }
 
@@ -651,6 +651,7 @@ footer a {
   flex-direction: column;
   width: 100%;
   font-size: 12px;
+  position: relative;
 }
 
 .liste_stages {
