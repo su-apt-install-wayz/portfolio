@@ -157,6 +157,14 @@ nav .nav_list a {
   position: relative;
 }
 
+nav .nav_list a.active::before {
+  margin: 20px auto;
+  text-transform: uppercase;
+  font-weight: 1000;
+  color: white;
+  position: relative;
+}
+
 nav .nav_list a::before {
   content: '';
   position: absolute;

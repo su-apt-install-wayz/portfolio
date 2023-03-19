@@ -15,7 +15,7 @@
   <nav id="nav">
     <img class="logo" src="./ressources/logo.png" alt="">
     <div id="nav_list" class="nav_list">
-      <a class="links" href="index.html#">Accueil</a>
+      <a class="links active" href="index.html#">Accueil</a>
       <a class="links" href="index.html#etudes">études</a>
       <a class="links" href="index.html#competences">compétences</a>
       <a class="links" href="">projets</a>
@@ -59,7 +59,7 @@
       </div>
     </section>
 
-    <section class="etudes" id="etudes">
+    <section class="etudes sectionNav" id="etudes">
         <h2 class="titre_section">études</h2>
         <img src="./ressources/points.svg" class="points_gauche">
         <img src="./ressources/points.svg" class="points_droit">
@@ -105,7 +105,7 @@
         </div>
     </section>
 
-    <section class="competences" id="competences">
+    <section class="competences sectionNav" id="competences">
         <h2 class="titre_section">compétences</h2>
 
         <div class="liste-competences">
@@ -182,8 +182,8 @@
   <script src="./script/main.js"></script>
   
   <script>
-    let section = document.getElementById('sectionNav');
-    let navLinks = document.querySelectorAll('.nav-item a');
+    let section = document.getElementsByClassName('sectionNav');;
+    let navLinks = document.querySelectorAll('.nav_list a');
 
     window.onscroll = () => {
       section.forEach(sec =>{
@@ -195,7 +195,7 @@
         if(top >= offset && top < offset + height){
           navLinks.forEach(links =>{
             links.classList.remove('active');
-            document.querySelector('.nav-item a[href*=' + id + ']').classList.add('active');
+            document.querySelector('.nav_list a[href*=' + id + ']').classList.add('active');
           });
         };
       });
