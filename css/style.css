@@ -247,23 +247,23 @@ footer .footer_ligne {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 500px;
   padding: 1rem;
   justify-content: space-between;
   gap: 30px;
 }
 
 footer .footer_ligne .footer_item {
+  margin: 0;
   padding: 5px;
   display: flex;
-  justify-content: center;
   gap: 10px;
   flex-direction: column;
 }
 
 footer .footer_ligne .footer_item h3 {
-  margin: 0 auto;
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -273,6 +273,14 @@ footer .footer_ligne a {
 
 footer .footer_ligne a:hover {
   color: var(--lightgreen);
+}
+
+footer hr {
+  margin: 10px auto;
+  width: 100%;
+  height: 1px;
+  background-color: var(--lightgreen);
+  border: none;
 }
 
 
