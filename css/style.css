@@ -284,8 +284,17 @@ footer hr {
 }
 
 
-@media (max-width :530px) {
+@media (max-width :525px) {
   footer .footer_ligne {
+    justify-content: center;
+  }
+
+  footer .footer_ligne .footer_item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  footer .footer_ligne #reseaux {
     justify-content: center;
   }
 }
