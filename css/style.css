@@ -705,7 +705,7 @@ footer hr {
   position: relative;
 }
 
-.liste_stages {
+.liste_projets{
   margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
@@ -715,7 +715,7 @@ footer hr {
   gap: 1vw;
 }
 
-.stage {
+.projet {
   margin: 30px auto;
   color: white;
   cursor: pointer;
@@ -726,116 +726,9 @@ footer hr {
   position: relative;
 }
 
-.stage:before,
-.stage:after {
-  border-color: transparent;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-  border-style: solid;
-  border-width: 0;
-  content: "";
-  height: 24px;
-  position: absolute;
-  width: 24px;
-}
-
-.stage:before {
-  border-color: var(--lightgreen);
-  border-left-width: 2px;
-  border-top-width: 2px;
-  left: -5px;
-  top: -5px;
-}
-
-.stage:after {
-  border-bottom-width: 2px;
-  border-color: var(--lightgreen);
-  border-right-width: 2px;
-  bottom: -5px;
-  right: -5px;
-}
-
-.stage:hover:before,
-.stage:hover:after {
-  height: 30%;
-  width: 30%;
-}
-
-
-.stage h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.stage .image_stage {
-  position: absolute;
-  background: url(../ressources/image_stage.png);
-  top: 0;
+.projet img {
   width: 100%;
-  height: 80%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  object-fit: contain;
-}
-
-.stage .image_stage2 {
-  position: absolute;
-  /* background: url(../ressources/.png); */
-  top: 0;
-  width: 100%;
-  height: 80%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  object-fit: contain;
-}
-
-.stage .titre_stage {
-  position: absolute;
-  top: 85%;
-  left: 5%;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 25px;
-}
-
-.btn-stage {
-  position: absolute;
-  bottom: -5%;
-  right: 5%;
-  margin: 50px auto;
-  border: solid 1px var(--lightgreen);
-  z-index: 3;
-  width: 150px;
-  height: 40px;
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.btn-stage:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--lightgreen);
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-stage:hover::before {
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-stage:hover {
-  color: black;
-  transition: all 0.3s ease-in-out;
+  height: auto;
 }
 
 
