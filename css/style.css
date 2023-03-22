@@ -710,25 +710,48 @@ footer hr {
   display: flex;
   flex-wrap: wrap;
   width: 85vw;
-  max-width: 1300px;
+  max-width: 1150px;
   justify-content: space-between;
-  gap: 1vw;
+  gap: 30px;
 }
 
 .projet {
-  margin: 30px auto;
+  margin: 0 auto;
   color: white;
   cursor: pointer;
   box-shadow:0px 0px 50px rgba(0, 0, 0, 0.2);
-  width: 600px;
-  height: 400px;
+  max-width: 550px;
+  width: 100%;
+  max-height: 270px;
+  height: 100%;
   background: var(--darkblue);
   position: relative;
+  overflow: hidden;
 }
 
 .projet img {
+  object-fit: cover;
   width: 100%;
   height: auto;
+}
+
+.projet .projet_desc {
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.765);
+  transition: 0.2s ease;
+}
+
+.projet:hover .projet_desc {
+  transform: translateY(0);
+  transition: 0.3s ease;
 }
 
 
@@ -902,7 +925,7 @@ iconify-icon {
 
   nav .nav_list {
     display: none;
-    left: -100%;
+    right: -100%;
     transition: 300ms ease;
   }
 
@@ -910,7 +933,7 @@ iconify-icon {
     z-index: -1;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
