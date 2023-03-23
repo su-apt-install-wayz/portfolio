@@ -426,8 +426,9 @@ footer hr {
   -webkit-text-fill-color: transparent;
 }
 
-.accueil .profil .left h2 {
+.accueil .profil .left .mon_nom {
   font-size: max(3vw,25px);
+  font-weight: 600;
   font-family: 'Poppins', sans-serif;
   color: white;
   background: var(--gradtitlepink);
@@ -435,22 +436,16 @@ footer hr {
   -webkit-text-fill-color: transparent;
 }
 
-.accueil .profil .left h2 span {
+.mon_nom .letter {
+  display: inline-block;
+}
+
+/* .accueil .profil .left h2 span {
   position: relative;
   background: var(--gradtitlepink);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.accueil .profil .left h2 span:before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  width: 50%;
-  height: 2px;
-  border-radius: 10px;
-  background: var(--gradtitlegreen);
-}
+} */
 
 .accueil .profil .left p {
   margin: 20px 5px;
@@ -974,7 +969,7 @@ iconify-icon {
     font-size: 110px;
   }
   
-  .accueil .profil .left h2 {
+  .accueil .profil .left .mon_nom {
     font-size: 50px;
   }
 

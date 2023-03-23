@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="./ressources/icone.png" type="image/x-icon"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 <body id="body">
 
@@ -33,7 +34,24 @@
       <div class="profil">
         <div class="left">
           <h1>BIENVENUE</h1>
-          <h2><span>Wustenberghs</span> Théo.</h2>
+
+          <h2 class="mon_nom">Wustenberghs Théo</h2>
+          <script>
+            var textWrapper = document.querySelector('.mon_nom');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({loop: false})
+            .add({
+                targets: '.mon_nom .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            });
+          </script>
+
           <p>Bienvenue sur mon portfolio. Dans celui-ci, vous pouvez retrouver mon <a style="color: #9FFFEC;" href="#etudes">parcours scolaire</a>, mes <a style="color: #9FFFEC;" href="#competences">compétences<a style="color: #9FFFEC;" href="#travaux"></a> ainsi que mes <a style="color: #9FFFEC;" href="#travaux">travaux</a>.</p>
           <a href="./ressources/Wustenberghs-CV.pdf" target="_blank" class="btn-cv">Consulter mon CV</a>
           <div class="liens">
