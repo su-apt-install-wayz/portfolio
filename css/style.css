@@ -55,7 +55,7 @@ body.overflow {
 .main {
   margin: 0 auto;
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 342px);
   display: flex;
   flex-direction: column;
 }
@@ -709,7 +709,8 @@ footer hr {
   margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
-  width: 85vw;
+  width: 100%;
+  padding: 10px;
   max-width: 1150px;
   justify-content: space-between;
   gap: 30px;
@@ -931,6 +932,37 @@ iconify-icon {
 
 
 
+.mentions {
+  margin: 150px auto 0;
+  z-index: 98;
+  width: 100%;
+  max-width: 1900px;
+  font-size: 12px;
+  padding: 1rem;
+  color: white;
+}
+
+.mentions h1 {
+  font-size: 30px;
+}
+
+.mentions h3 {
+  font-size: 15px;
+}
+
+.mentions a {
+  text-decoration: underline;
+  color: var(--lightgreen);
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -949,10 +981,6 @@ iconify-icon {
   .titre_section {
     font-size: 80px;
   }
-}
-
-@media (max-height:1345px) {
-
 }
 
 @media (max-height:775px) {
@@ -1033,6 +1061,25 @@ iconify-icon {
   
   .points_droit {
     display: none;
+  }
+}
+
+@media (max-width:565px) {
+  .projet .projet_desc {
+    padding: 5px;
+  }
+
+  .projet .projet_desc h3 {
+    margin: 2% auto;
+    font-size: max(1vw ,15px);
+  }
+
+  .projet .projet_desc p {
+    font-size: max(2.5vw, 8px);
+  }
+
+  .projet .projet_desc .btn-projet {
+    width: 100px;
   }
 }
 
