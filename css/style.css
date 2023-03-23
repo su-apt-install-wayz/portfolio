@@ -16,7 +16,7 @@
   --pinkneon:#FF00F2;
   --pinklightneon:#ff5ce4;
   --greenneon:#00ffcc;
-  --lightpink:#C294FD;
+  --lightpink:#b889f6;
   --lightgreen:#9FFFEC;
   --gradtitlegreen:linear-gradient(13deg, #00ffcc, #9FFFEC);
   --gradtitlepink:linear-gradient(13deg, #ff5ce4, #C294FD);
@@ -749,9 +749,63 @@ footer hr {
   transition: 0.2s ease;
 }
 
+.projet .projet_desc h3 {
+  margin: 10px auto;
+  font-size: 30px;
+}
+
+.projet .projet_desc span {
+  color: var(--lightpink);
+}
+
+.projet .projet_desc a {
+  text-decoration: underline;
+  color: var(--lightgreen);
+}
+
 .projet:hover .projet_desc {
   transform: translateY(0);
   transition: 0.3s ease;
+}
+
+.projet_desc a.btn-projet {
+  position: relative;
+  margin: 5px 0;
+  border: solid 1px var(--lightgreen);
+  z-index: 0;
+  width: 150px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.projet_desc .btn-projet:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--lightgreen);
+  transition: all 0.3s ease-in-out;
+}
+
+.projet_desc .btn-projet:hover::before {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.projet_desc .btn-projet:hover {
+  color: black;
+  transition: all 0.3s ease-in-out;
 }
 
 
@@ -895,6 +949,10 @@ iconify-icon {
   .titre_section {
     font-size: 80px;
   }
+}
+
+@media (max-height:1345px) {
+
 }
 
 @media (max-height:775px) {
