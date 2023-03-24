@@ -436,17 +436,6 @@ footer hr {
   -webkit-text-fill-color: transparent;
 }
 
-.mon_nom .letter {
-  display: inline-block;
-}
-
-/* .accueil .profil .left h2 span {
-  position: relative;
-  background: var(--gradtitlepink);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
-
 .accueil .profil .left p {
   margin: 20px 5px;
   max-width: 700px;
