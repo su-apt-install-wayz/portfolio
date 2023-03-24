@@ -951,6 +951,13 @@ iconify-icon {
   gap: 20px;
 }
 
+.veille .liste_veille .carte_veille img {
+  width: 100%;
+  min-width: 300px;
+  max-height: 220px;
+  height: auto;
+}
+
 .veille .liste_veille .carte_veille p {
   margin: 10px 0;
 }
