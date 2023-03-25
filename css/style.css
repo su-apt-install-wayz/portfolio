@@ -38,6 +38,22 @@
   user-select: none;
 }
 
+*::-webkit-scrollbar-track
+{
+	background-color: var(--darkblue);;
+}
+
+*::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: var(--darkblue);
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: var(--lightgreen);
+}
+
 svg {
   vertical-align: middle;
 }
@@ -192,7 +208,7 @@ nav .burger {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 45px;
+  font-size: 35px;
   display: none;
 }
 
@@ -917,7 +933,7 @@ iconify-icon {
 
 
 .veille {
-  margin: 130px auto 0;
+  margin: 150px auto 0;
   z-index: 98;
   width: 100%;
   display: flex;
@@ -930,6 +946,7 @@ iconify-icon {
 
 .veille h2 {
   margin: 0 auto;
+  text-align: center;
 }
 
 .veille .liste_veille {
@@ -937,7 +954,7 @@ iconify-icon {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 2000px;
+  max-width: 1500px;
   gap: 20px;
 }
 
@@ -953,17 +970,28 @@ iconify-icon {
 
 .veille .liste_veille .carte_veille img {
   width: 100%;
-  min-width: 300px;
-  max-height: 220px;
-  height: auto;
+  border-radius: 10px;
+  max-width: 500px;
+  min-width: 200px;
+  object-fit: cover;
 }
 
-.veille .liste_veille .carte_veille p {
+.veille .liste_veille .carte_veille .right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.veille .liste_veille .carte_veille .right h3 {
+  font-size: 1.5rem;
+}
+
+.veille .liste_veille .carte_veille .right p {
   margin: 10px 0;
 }
 
 .carte_veille .btn-veille {
-  margin: 20px 0;
+  margin-top: auto;
   border: solid 1px var(--lightgreen);
   z-index: 0;
   width: 200px;
@@ -1063,6 +1091,16 @@ iconify-icon {
 @media (max-height:775px) {
   .accueil .profil {
     margin: 80px auto 0;
+  }
+}
+
+@media (max-width:1050px) {
+  .veille .liste_veille .carte_veille {
+    flex-direction: column;
+  }
+
+  .veille .liste_veille .carte_veille img {
+    margin: 0 auto;
   }
 }
 
