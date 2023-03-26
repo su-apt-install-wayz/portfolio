@@ -945,8 +945,9 @@ iconify-icon {
 }
 
 .veille h2 {
-  margin: 0 auto;
+  margin: 30px auto;
   text-align: center;
+  font-size: 1.6rem;
 }
 
 .veille .liste_veille {
@@ -966,6 +967,7 @@ iconify-icon {
   background-color: var(--darkblue);
   border-radius: 10px;
   gap: 20px;
+  box-shadow:0px 0px 50px rgba(0, 0, 0, 0.1);
 }
 
 .veille .liste_veille .carte_veille img {
