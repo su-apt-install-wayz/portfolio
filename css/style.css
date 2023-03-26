@@ -992,6 +992,7 @@ iconify-icon {
 
 .carte_veille .btn-veille {
   margin-top: auto;
+  margin-bottom: 10px;
   border: solid 1px var(--lightgreen);
   z-index: 0;
   width: 200px;
