@@ -277,7 +277,7 @@
       </div>
       <div class="footer_item">
         <h3>Contact</h3>
-        <a href="#">theo.wustenberghs@proton.me</a>
+        <a href="mailto:theo.wustenberghs@proton.me">theo.wustenberghs@proton.me</a>
       </div>
     </div><hr>
     <div style="max-width: none;" class="footer_ligne">
@@ -287,27 +287,6 @@
   </footer>
 
   <script src="./script/main.js"></script>
-  
-  <script>
-    let section = document.getElementsByClassName('sectionNav');;
-    let navLinks = document.querySelectorAll('.nav_list a');
-
-    window.onscroll = () => {
-      section.forEach(sec =>{
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if(top >= offset && top < offset + height){
-          navLinks.forEach(links =>{
-            links.classList.remove('active');
-            document.querySelector('.nav_list a[href*=' + id + ']').classList.add('active');
-          });
-        };
-      });
-    };
-  </script>
     
 </body>
 </html>
