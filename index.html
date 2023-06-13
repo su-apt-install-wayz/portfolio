@@ -281,10 +281,15 @@
       </div>
     </div><hr>
     <div style="max-width: none;" class="footer_ligne">
-      <p>Wustenberghs Théo &copy 2023 - Tous droits réservés</p>
+      <p>Wustenberghs Théo &copy <span id="year"></span> - Tous droits réservés</p>
       <a href="mentions.html">Mentions légales</a>
     </div>
   </footer>
+
+  <script>
+    const year = document.getElementById('year');
+    year.innerHTML = new Date().getFullYear();
+  </script>
 
   <script src="./script/main.js"></script>
     
