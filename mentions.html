@@ -1,86 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wustenberghs Théo - Portfolio | BTS SIO</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./ressources/icone.png" type="image/x-icon"/>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <title>Wustenberghs Théo | Portfolio</title>
+    <link rel="shortcut icon" href="./ressources/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Curseur de la souris -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
 </head>
-<body id="body">
 
-  <nav id="nav">
-    <img class="logo" src="./ressources/logo.png" alt="">
-    <div id="nav_list" class="nav_list">
-      <a class="links" href="index.html#">Accueil</a>
-      <a class="links" href="index.html#etudes">études</a>
-      <a class="links" href="index.html#competences">compétences</a>
-      <a class="links" href="index.html#projets">projets</a>
-      <a class="links" href="index.html#certifs">certifications</a>
-      <a class="links" href="veille.html">veille</a>
-    </div>
-    <div class="burger">
-      <i id="menu" onclick="navbarMobile('open');" class="ri-menu-line menu active"></i>
-      <i id="close" onclick="navbarMobile('close');" class="ri-close-line close"></i>
-    </div>
-  </nav>
+<body>
 
-    <section class="main">
-        <section class="mentions">
-            <h1>Mentions légales :</h1><br>
+    <header>
+        <nav>
+            <div class="logo" onclick="location.href='#';"><img src="./ressources/logo.png" alt=""></div>
 
-            <h3>Responsable de la publication :</h3>
-            <p>
-                Nom et prénom : Wustenberghs Théo<br>
-                Adresse mail : <a href="mailto:theo.wustenberghs@proton.me" target="blank">theo.wustenberghs@proton.me</a><br>
-            </p><br>
+            <ul class="nav_list" id="nav_list">
+                <a href='index.html#accueil'>
+                    <span class="material-symbols-rounded">home</span>Accueil
+                </a>
+                <a href='index.html#experience'>
+                    <span class="material-symbols-rounded">segment</span>Mon expérience
+                </a>
+                <a href='index.html#competences'>
+                    <span class="material-symbols-rounded">developer_guide</span>Mes compétences
+                </a>
+                <a href='index.html#projets'>
+                    <span class="material-symbols-rounded">code</span>Mes projets
+                </a>
+            </ul>
 
-            <h3>Hébergeur :</h3>
-            <p>
-                Nom : GitHub Page<br>
-                Lieu : San Francisco - Etats-Unis <br>
-            </p><br>
-
-            <h3>Propriété intellectuelle :</h3>
-            <p>Tous les éléments présents sur ce site (textes, vidéos, logos, etc.) sont la propriété exclusive de Wustenberghs Théo. Toute reproduction, représentation, modification, publication, adaptation totale ou partielle de ces éléments, par quelque moyen que ce soit, est interdite sans l'autorisation préalable et écrite de l'auteur.
-                Execpté les librairies JS pour les animations des textes qui sont de <a target="target" href="https://tobiasahlin.com/moving-letters/">Moving Letters</a>, les animations au scroll de la page sont de la librairie <a target="blank" href="https://scrollrevealjs.org/">ScrollReveal</a>.</p><br>
-
-            <h3>Liens hypertextes :</h3>
-            <p>Les liens hypertextes présents sur ce site et aiguillant les utilisateurs vers d'autres sites Internet n'engagent pas la responsabilité de Wustenberghs Théo quant au contenu de ces sites.</p><br>
-
-            <h3>Limitation de responsabilité :</h3>
-            <p>Wustenberghs Théo ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site wustenberghs-theo.fr</p><br>
-
-            <h3>Droit applicable :</h3>
-            <p>Le présent site est soumis au droit français.</p>
-        </section>
-    </section>
-
-    <footer>
-        <div class="footer_ligne">
-          <div class="footer_item">
-            <h3>Portfolio</h3>
-            <p>Merci d'avoir visité mon portfolio !</p>
-            <div id="reseaux" style="display: flex; gap: 20px;">
-              <a target="blank" href="https://github.com/su-apt-install-wayz"><div class="hexagone"><i class="ri-github-fill"></i></div></a>
-              <a target="blank" href="https://fr.linkedin.com/in/theo-wustenberghs-a92b0321b?original_referer=https%3A%2F%2Fwww.google.com%2F"><div class="hexagone"><i class="ri-linkedin-box-fill"></i></div></a>
+            <div data-cursor="-black" class="burger" id="burgerBtn">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
             </div>
-          </div>
-          <div class="footer_item">
-            <h3>Contact</h3>
-            <a href="#">theo.wustenberghs@proton.me</a>
-          </div>
-        </div><hr>
-        <div style="max-width: none;" class="footer_ligne">
-          <p>Wustenberghs Théo &copy 2023 - Tous droits réservés</p>
-          <a href="mentions.html">Mentions légales</a>
+        </nav>
+
+        <script src="./js/navbar.js"></script>
+    </header>
+
+
+
+    <main class="main">
+        <div class="content">
+            <div class="mentions">
+                <h1>Mentions légales :</h1>
+
+                <h3>Responsable de la publication :</h3>
+                <p>Nom et prénom : Wustenberghs Théo</p>
+                <p>Adresse mail : <a data-cursor="-black" href="mailto:theo.wustenberghs@proton.me" target="blank">theo.wustenberghs@proton.me <span class="material-symbols-rounded">open_in_new</span></a></p>
+
+                <h3>Hébergeur :</h3>
+                <p>
+                    Nom : GitHub Page
+                    Lieu : San Francisco - Etats-Unis
+                </p>
+
+                <h3>Propriété intellectuelle :</h3>
+                <p>Tous les éléments présents sur ce site (textes, vidéos, logos, etc.) sont la propriété exclusive de
+                    Wustenberghs Théo. Toute reproduction, représentation, modification, publication, adaptation totale
+                    ou partielle de ces éléments, par quelque moyen que ce soit, est interdite sans l'autorisation
+                    préalable et écrite de l'auteur.
+                    Execpté les librairies JS pour les animations des textes qui sont de <a data-cursor="-black"
+                        href="https://tobiasahlin.com/moving-letters/" target="blank">Moving Letters <span
+                            class="material-symbols-rounded">open_in_new</span></a>, les animations au scroll de
+                    la page sont de la librairie <a data-cursor="-black" href="https://scrollrevealjs.org/"
+                        target="blank">ScrollReveal <span class="material-symbols-rounded">open_in_new</span></a>.
+                </p>
+
+                <h3>Liens hypertextes :</h3>
+                <p>Les liens hypertextes présents sur ce site et aiguillant les utilisateurs vers d'autres sites
+                    Internet n'engagent pas la responsabilité de Wustenberghs Théo quant au contenu de ces sites.</p>
+
+
+                <h3>Limitation de responsabilité :</h3>
+                <p>Wustenberghs Théo ne pourra être tenu responsable des dommages directs et indirects causés au
+                    matériel de l'utilisateur, lors de l'accès au site wustenberghs-theo.fr</p>
+
+                <h3>Droit applicable :</h3>
+                <p>Le présent site est soumis au droit français.</p>
+            </div>
         </div>
+    </main>
+
+    <div class="footer_button">
+        <div data-cursor="-black" class="touche" id="laTouche">
+            <p onclick="enableFooter()" id="touche" class="material-symbols-rounded">touch_app</p>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="footer_content">
+            <div class="footer_list">
+                <a data-cursor="-black" href="mentions.html" class="footer_item">Mentions légales</a>
+                <a data-cursor="-black" href="mailto:theo.wustenberghs@proton.me" class="footer_item">Contact</a>
+            </div>
+            <span>
+                <p id="year"></p>
+                <p>Website by Wustenberghs Théo.</p>
+            </span>
+        </div>
+
+        <span onclick="disableFooter()" class="material-symbols-rounded close_footer">close</span>
+
+        <img src="./ressources/icone_footer.png" alt="">
     </footer>
-    
-    <script src="./script/main.js"></script>
-    
+
+    <script src="./js/footer.js"></script>
+
+    <script>
+        const touche = document.getElementById('touche');
+        // Vérifier si l'appareil est un mobile ou une tablette
+        function estMobileOuTablette() {
+            return (typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Vérifier si l'appareil prend en charge les écrans tactiles
+        function prendEnChargeEcranTactile() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints;
+        }
+
+        // Exemple d'utilisation
+        if (!estMobileOuTablette()) {
+            var cursor = new MouseFollower();
+            touche.classList.remove('material-symbols-rounded');
+            touche.innerText = "F";
+        }
+
+        if (!prendEnChargeEcranTactile()) {
+            var cursor = new MouseFollower();
+            touche.classList.remove('material-symbols-rounded');
+            touche.innerText = "F";
+        }
+    </script>
+
 </body>
+
 </html>

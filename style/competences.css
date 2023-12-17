@@ -1,0 +1,152 @@
+@import url('init.css');
+
+.accordion {
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.accordion hr {
+    width: 100%;
+    height: 1px;
+    outline: none;
+    border: none;
+    background: var(--c-grey);
+    border-radius: 6px;
+}
+
+.accordion .accordion-item {
+    /* background: var(--c-background); */
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.accordion button {
+    display: flex;
+    width: 100%;
+    color: var(--c-grey);
+    font-size: 20px;
+    font-weight: 400;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion button .accordion-title span {
+    color: var(--c-primary-color);
+}
+
+.accordion button .icon {
+    font-size: 30px;
+    color: var(--c-primary-color);
+}
+
+
+.accordion button[aria-expanded=true] {
+    color: var(--c-text-color);
+}
+
+.accordion button[aria-expanded=true] .icon {
+    transform: rotate(-180deg);
+}
+
+.accordion button[aria-expanded=true]+.accordion-content {
+    opacity: 1;
+    max-height: 40em;
+    transition: all 500ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 300ms linear, max-height 300ms linear;
+    will-change: opacity, max-height;
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion .accordion-content hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    outline: none;
+    background: var(--c-grey);
+    border-radius: 6px;
+}
+
+.accordion-content .liste_competences {
+    margin: 30px auto;
+    display: flex;
+    width: 100%;
+    gap: 50px;
+}
+
+.liste_competences .left, .liste_competences .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.liste_competences .competence {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.liste_competences .competence .name {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 10px;
+}
+
+.liste_competences .competence .name h5 {
+    font-size: 16px;
+    color: var(--c-grey);
+}
+
+.liste_competences .competence .name p {
+    color: var(--c-grey);
+}
+
+.liste_competences .competence .barre {
+    width: 100%;
+    height: 10px;
+    border-radius: 6px;
+    background: var(--c-grey);
+    position: relative;
+}
+
+.liste_competences .competence .barre .progression {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    border-radius: 6px;
+    background: var(--c-secondary-color);
+}
+
+@media (max-width:900px) {
+    .accordion-content .liste_competences {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

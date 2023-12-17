@@ -1,0 +1,87 @@
+@import url(init.css);
+
+.notification {
+    z-index: 99;
+    position: fixed;
+    top: 95px;
+    left: 10px;
+    width: max-content;
+    border-radius: 6px;
+    background: var(--c-background);
+    border: solid 2px var(--c-dark-grey);
+    color: var(--c-text-color);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 3s linear;
+}
+
+.notification_content {
+    display: flex;
+    align-items: center;
+    padding: 16px 8px;
+    gap: 10px;
+}
+
+.notification_progress {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: calc(100% - 8px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: inherit;
+    animation: progress 2.5s 0.3s linear;
+}
+
+.notification_progress.success {
+    background: var(--c-success);
+}
+
+.notification_progress.error {
+    background: var(--c-error);
+}
+
+.notification_progress.warning {
+    background: var(--c-warning);
+}
+
+
+.notification_icon.success {
+    color: var(--c-success);
+}
+
+.notification_icon.error {
+    color: var(--c-error);
+}
+
+.notification_icon.warning {
+    color: var(--c-warning);
+}
+
+
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    95% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+@keyframes progress {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@media (max-width:750px) {
+    .notification {
+        top: 10px;
+    }
+}

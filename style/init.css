@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gabarito', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+:root {
+    --c-primary-color: #AEFF01;
+    --c-secondary-color: #4546B2;
+
+    --c-background: #0D0D0D;
+    --c-card: #131313;
+    --c-text-color: #fff;
+    --c-grey: #727272;
+    --c-dark-grey: #9191910c;
+    --c-footer: #e4e4e4;
+
+    --c-success: #AEFF01;
+    --c-error: #ff2c3e;
+    --c-success-2: #41f1b6;
+    --c-warning: #ff9900;
+}
+
+html {
+    background: var(--c-background);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--c-background);
+    background: url(../ressources/background.png);
+}
+
+body.modal_active {
+    overflow: hidden;
+}
+
+.main {
+    margin: 80px auto 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .content {
+    margin: 0 auto 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2000px;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: 10px;
+    scrollbar-color: var(--c-grey) var(--c-background);
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: var(--c-background);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: var(--c-grey);
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal_left {
+    position: relative;
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal_left.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.reveal_right {
+    position: relative;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal_right.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.mf-cursor {
+    z-index: 9999999999 !important;
+    color : var(--c-primary-color);
+}
+
+.mf-cursor.-black {
+    color : var(--c-secondary-color);
+}

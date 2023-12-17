@@ -1,297 +1,716 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wustenberghs Théo - Portfolio | BTS SIO</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./ressources/icone.png" type="image/x-icon"/>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>Wustenberghs Théo | Portfolio</title>
+    <link rel="shortcut icon" href="./ressources/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Curseur de la souris -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
 </head>
-<body id="body">
 
-  <nav id="nav">
-    <img class="logo" src="./ressources/logo.png" alt="">
-    <div id="nav_list" class="nav_list">
-      <a class="links" href="#">Accueil</a>
-      <a class="links" href="#etudes">études</a>
-      <a class="links" href="#competences">compétences</a>
-      <a class="links" href="#projets">projets</a>
-      <a class="links" href="#certifs">certifications</a>
-      <a class="links" href="veille.html">veille</a>
-    </div>
-    <div class="burger">
-      <i id="menu" onclick="navbarMobile('open');" class="ri-menu-line menu active"></i>
-      <i id="close" onclick="navbarMobile('close');" class="ri-close-line close"></i>
-    </div>
-  </nav>
+<body>
 
-  <section class="main">
-
-    <section class="accueil">
-      <div class="profil">
-        <div class="left">
-          <h1>BIENVENUE</h1>
-          <h2 class="mon_nom">Wustenberghs Théo.</h2>
-
-          <p>Bienvenue sur mon portfolio. Dans celui-ci, vous pouvez retrouver mon <a style="color: #9FFFEC;" href="#etudes">parcours scolaire</a>, mes <a style="color: #9FFFEC;" href="#competences">compétences<a style="color: #9FFFEC;" href="#travaux"></a> ainsi que mes <a style="color: #9FFFEC;" href="#projets">projets</a>.</p>
-          <a href="./ressources/Wustenberghs-CV.pdf" target="blank" class="btn-cv">Consulter mon CV</a>
-          <div class="liens">
-            <div class="trait"></div>
-            <div class="reseaux">
-              <a target="blank" href="https://github.com/su-apt-install-wayz"><div class="hexagone"><i class="ri-github-fill"></i></div></a>
-              <a target="blank" href="https://fr.linkedin.com/in/theo-wustenberghs-a92b0321b?original_referer=https%3A%2F%2Fwww.google.com%2F"><div class="hexagone"><i class="ri-linkedin-box-fill"></i></div></a>
-            </div>
-          </div>
+    <!-- <div class="loader_container">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="right">
-          <div class="photo_profil">
-            <img src="./ressources/me.png" alt="">
-          </div>
-          <div class="liens_vert">
-            <div class="trait"></div>
-            <div class="reseaux">
-              <a target="_blank" href="https://github.com/su-apt-install-wayz"><div class="hexagone"><i class="ri-github-fill"></i></div></a>
-              <a target="_blank" href="https://fr.linkedin.com/in/theo-wustenberghs-a92b0321b?original_referer=https%3A%2F%2Fwww.google.com%2F"><div class="hexagone"><i class="ri-linkedin-box-fill"></i></div></a>
+    </div> -->
+
+    <header>
+        <nav>
+            <div class="logo" onclick="location.href='#';"><img src="./ressources/logo.png" alt=""></div>
+
+            <ul class="nav_list" id="nav_list">
+                <a href='index.html#accueil'>
+                    <span class="material-symbols-rounded">home</span>Accueil
+                </a>
+                <a href='index.html#experience'>
+                    <span class="material-symbols-rounded">segment</span>Mon expérience
+                </a>
+                <a href='index.html#competences'>
+                    <span class="material-symbols-rounded">developer_guide</span>Mes compétences
+                </a>
+                <a href='index.html#projets'>
+                    <span class="material-symbols-rounded">code</span>Mes projets
+                </a>
+            </ul>
+
+            <div data-cursor="-black" class="burger" id="burgerBtn">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </nav>
 
-    <section class="etudes reveal" id="etudes">
-        <h2 class="titre_section">études</h2>
-        <img src="./ressources/points.svg" class="points_gauche">
-        <img src="./ressources/points.svg" class="points_droit">
+        <script src="./js/navbar.js"></script>
+    </header>
 
-        <div class="liste-etudes">
 
-            <div class="etude">
-              <div class="left">
-                <iconify-icon icon="ic:outline-school" style="color: #C294FD;" width="50" height="50"></iconify-icon>
-                <span class="line"></span>
-              </div>
-              <div class="right">
-                <p class="date-etude">2021 - Aujourd'hui</p><br>
-                <h3 class="titre-etude">BTS SIO option SLAM (Solutions Logicielles et Applications Métiers)</h3><br>
-                <p class="desc-etude">Actuellement en BTS Services Informatiques aux Organisations option SLAM au lycée Saint-Luc de Cambrai.</p>
-              </div>
-            </div>
-      
-            <div class="etude">
-              <div class="left">
-                <iconify-icon icon="ic:outline-school" style="color: #C294FD;" width="50" height="50"></iconify-icon>
-                <span class="line"></span>
-              </div>
-              <div class="right">
-                <p class="date-etude">2018 - 2021</p><br>
-                <h3 class="titre-etude">Baccalauréat Général</h3><br>
-                <p class="desc-etude">Au lycée Général & Technologique Fénelon, j'ai obtenu mon BAC spécialisé Mathématiques et Numériques et Sciences Informatiques.<br><br>Mention Assez Bien</p>
-              </div>
-            </div>
-      
-            <div class="etude">
-              <div class="left">
-                <iconify-icon icon="ic:outline-school" style="color: #C294FD;" width="50" height="50"></iconify-icon>
-                <span class="line"></span>
-              </div>
-              <div class="right">
-                <p class="date-etude">2014 - 2018</p><br>
-                <h3 class="titre-etude">Brevet des Collèges</h3><br>
-                <p class="desc-etude">J'ai obtenu mon brevet au Collège de l'Ostrevant à Bouchain.<br><br>Mention Bien.</p>
-              </div>
-            </div>
-      
-        </div>
-    </section>
 
-    <section class="competences reveal" id="competences">
-        <h2 class="titre_section">compétences</h2>
-
-        <div class="liste-competences">
-
-            <div class="competence">
-                <div class="titre-competence">
-                    <div class="icone-competence">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
-                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
-                      </svg>
+    <main class="main">
+        <div class="content">
+            <section id="accueil" class="home">
+                <div class="left">
+                    <h1>WUSTENBERGHS Théo</h1>
+                    <h3><span class="auto-type"></span></h3>
+                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+                    <script>
+                        var typed = new Typed(".auto-type", {
+                            strings: ["Développeur Front-End", "Développeur Back-End"],
+                            typeSpeed: 50,
+                            backSpeed: 50,
+                            backDelay: 1500,
+                            loop: true
+                        });
+                    </script>
+                    <hr>
+                    <p>
+                        Étudiant en développement web à Aston, âgé de 20 ans, ma passion pour l'informatique se
+                        manifeste à travers mon engouement pour le développement web. 
+                        <br> 
+                        En parallèle, j'explore également le domaine de l'UI et UX Design.
+                    </p>
+                    <div class="liens">
+                        <a href="./ressources/wustenberghs_theo_cv.pdf" target="blank"><div class="lien_reseau"><i class="ri-article-fill"></i></div></a>
+                        <a href="https://github.com/su-apt-install-wayz" target="blank"><div class="lien_reseau"><i class="ri-github-fill"></i></div></a>
+                        <a href="https://fr.linkedin.com/in/theo-wustenberghs" target="blank"><div class="lien_reseau"><i class="ri-linkedin-box-fill"></i></div></a>
                     </div>
-                    <h4>Développement Web</h4>
                 </div>
-                <div class="desc-competence">
-                  <p>Création de site web en HTML / CSS / PHP / JAVASCRIPT , en liaison avec des bases de données.</p>
-              </div>
-            </div>
-      
-            <div class="competence">
-              <div class="titre-competence">
-                <div class="icone-competence">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
-                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
-                  </svg>
+                <div class="right">
+                    <div class="img_container">
+                        <img src="./ressources/me.png" alt="" class="img_profil">
+                        <div class="carre" id="carre-1"></div>
+                        <div class="carre" id="carre-2"></div>
+                        <div class="carre" id="carre-3"></div>
+                        <div class="carre" id="carre-4"></div>
+                        <div class="carre" id="carre-5"></div>
+                    </div>
                 </div>
-                <h4>Java</h4>
-              </div>
-              <div class="desc-competence">
-                <p>Création de code Java utilisant WindowBuilder sous Swing pour des applications avec interfaces graphiques en lien avec des bases de données ou des fichiers externes.</p>
-              </div>
-            </div>
-      
-            <div class="competence">
-              <div class="titre-competence">
-                <div class="icone-competence">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-inboxes" viewBox="0 0 16 16">
-                    <path d="M4.98 1a.5.5 0 0 0-.39.188L1.54 5H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0A.5.5 0 0 1 10 5h4.46l-3.05-3.812A.5.5 0 0 0 11.02 1H4.98zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562A.5.5 0 0 0 1.884 9h12.234a.5.5 0 0 0 .496-.438L14.933 6zM3.809.563A1.5 1.5 0 0 1 4.981 0h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 10H1.883A1.5 1.5 0 0 1 .394 8.686l-.39-3.124a.5.5 0 0 1 .106-.374L3.81.563zM.125 11.17A.5.5 0 0 1 .5 11H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0 .5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 16H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .121-.393zm.941.83.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438l.32-2.562H10.45a2.5 2.5 0 0 1-4.9 0H1.066z"/>
-                  </svg>
+            </section>
+
+
+            <section id="experience" class="experience reveal">
+                <h2>Expérience</h2>
+
+                <div class="container">
+                    <div class="timeline-block timeline-block-right reveal_right">
+                        <div class="marker"></div>
+                        <div class="timeline-content">
+                            <h3 data-cursor="-black">2023 - Présent</h3>
+                            <span>Aston CDNT (Concepteur Développeur Nouvelles Technologies)</span>
+                            <p>Mon entrée à l'école supérieure en alternance en CDNT au sein de <a data-cursor="-black"
+                                    href="https://astonbysqli.com/" target="blank">Aston <span
+                                        class="material-symbols-rounded">open_in_new</span></a> a représenté une
+                                décision stratégique dans mon parcours informatique spécialisé dans le développement web
+                            </p><br>
+                            <p>J'ai choisi de suivre ce cursus tout en travaillant au sein de l'entreprise Desenfans en
+                                tant qu'alternant Développeur Web</p><br>
+                            <p>Cette expérience en alternance me permet de développer des compétences professionnelles
+                                tangibles, et j'ai l'opportunité de contribuer de manière significative à plusieurs
+                                projets au sein de l'entreprise</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-block timeline-block-left reveal_left">
+                        <div class="marker"></div>
+                        <div class="timeline-content">
+                            <h3 data-cursor="-black">2021 - 2023</h3>
+                            <span>BTS SIO (Services Informatiqes aux Organisations)</span>
+                            <p>Lors de mon passage au BTS SIO à <a data-cursor="-black"
+                                    href="https://www.saintluc.btssio.fr/" target="blank">Saint-Luc Cambrai <span
+                                        class="material-symbols-rounded">open_in_new</span></a>, j'ai fait un choix
+                                déterminant en optant pour la spécialisation en développement SLAM (Solutions
+                                Logicielles et Applications Métier). Cela m'a permis de plonger profondément dans le
+                                monde du développement logiciel et de me familiariser avec les technologies et les
+                                langages de programmation pertinents</p><br>
+                            <p>Pendant mon cursus, j'ai participé activement à des projets de développement logiciel et
+                                j'ai acquis des compétences avancées en programmation, en gestion de bases de données et
+                                en conception d'applications qui m'ont fait découvrir mon intérêt pour le développement
+                                web</p><br>
+                            <p>Cette expérience au BTS a joué un rôle essentiel dans la définition de ma carrière, car
+                                elle a renforcé mon désir de me spécialiser davantage dans le développement web</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-block timeline-block-right reveal_right">
+                        <div class="marker"></div>
+                        <div class="timeline-content">
+                            <h3 data-cursor="-black">2018 - 2021</h3>
+                            <span>Baccalauréat Général</span>
+                            <p>Pendant mes années de lycée à Fénelon Cambrai, j'ai poursuivi un parcours général qui m'a
+                                offert une solide éducation dans une variété de matières. J'ai fait des choix éducatifs
+                                en optant pour une spécialisation en mathématiques et en NSI (Numérique et Sciences de
+                                l'Informatique), mettant ainsi en avant mon intérêt pour les domaines scientifiques et
+                                informatiques</p><br>
+                            <p>Au cours de ces années, j'ai développé des compétences avancées en mathématiques, en
+                                résolution de problèmes et en programmation, grâce à ma spécialisation en NSI</p><br>
+                            <p>Mon expérience au lycée a constitué une étape importante dans mon parcours en élargissant
+                                mes horizons académiques et en me préparant à la suite de mon parcours dans le domaine
+                                de l'informatique</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-block timeline-block-left reveal_left">
+                        <div class="marker"></div>
+                        <div class="timeline-content">
+                            <h3 data-cursor="-black">2014 - 2018</h3>
+                            <span>Brevet des collèges</span>
+                            <p>Au collège, j'ai suivi un programme général qui m'a permis d'acquérir les bases de
+                                l'éducation académique. J'ai étudié diverses matières telles que les mathématiques, le
+                                français, les sciences, et la géographie. Mon passage au collège a jeté les bases de ma
+                                formation académique en développant des compétences essentielles</p>
+                        </div>
+                    </div>
                 </div>
-                <h4>Base de données</h4>
-              </div>
-              <div class="desc-competence">
-                <p>Recherche MCD/MLD pour la création, gestion et administration de base de données de tailles différentes, pour applications externes et php.</p>
-              </div>
-            </div>
-      
-            <div class="competence">
-              <div class="titre-competence">
-                <div class="icone-competence">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
-                    <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
-                  </svg>
+            </section>
+
+
+            <section id="competences" class="skills reveal">
+                <h2>Compétences</h2>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button id="accordion-button-1" aria-expanded="true">
+                            <span class="accordion-title"><span class="material-symbols-rounded">code</span>
+                                Front-End</span>
+                            <span class="material-symbols-rounded icon" aria-hidden="true">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <!-- <hr> -->
+                            <div class="liste_competences">
+                                <div class="left">
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>HTML</h5>
+                                            <p>90%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>Javascript</h5>
+                                            <p>60%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>CSS</h5>
+                                            <p>80%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="accordion-item">
+                        <button id="accordion-button-2" aria-expanded="false">
+                            <span class="accordion-title"><span class="material-symbols-rounded">dns</span>
+                                Back-End</span>
+                            <span class="material-symbols-rounded icon" aria-hidden="true">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <!-- <hr> -->
+                            <div class="liste_competences">
+                                <div class="left">
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>PHP</h5>
+                                            <p>80%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>SQL</h5>
+                                            <p>60%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>JAVA</h5>
+                                            <p>30%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 30%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>Javascript</h5>
+                                            <p>50%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 50%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>MariaDB</h5>
+                                            <p>60%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>Docker</h5>
+                                            <p>40%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 40%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="accordion-item">
+                        <button id="accordion-button-3" aria-expanded="false">
+                            <span class="accordion-title"><span class="material-symbols-rounded">edit</span>
+                                Design</span>
+                            <span class="material-symbols-rounded icon" aria-hidden="true">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <!-- <hr> -->
+                            <div class="liste_competences">
+                                <div class="left">
+                                    <div class="competence">
+                                        <div class="name">
+                                            <h5>Figma</h5>
+                                            <p>70%</p>
+                                        </div>
+                                        <div class="barre">
+                                            <div class="progression" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h4>Office 365</h4>
-              </div>
-              <div class="desc-competence">
-                <p>Capacité de gérer les outils de la suite office 365 pour : rendre des comptes, exposer mes idées sous forme de diaporama.</p>
-              </div>
-            </div>
-      
-            <script src="./script/vanilla-tilt.babel.min.js"></script>
-            <script>
-                VanillaTilt.init(document.querySelectorAll(".liste-competences .competence"), {
-                  max: 15,
-                  speed: 400
-                }); 
-            </script>
-      
-        </div>
-    </section>
+            </section>
 
-    <section class="projets reveal" id="projets">
-      <h2 class="titre_section">Projets</h2>
-      <img src="./ressources/points.svg" class="points_gauche">
-      <img src="./ressources/points.svg" class="points_droit">
-  
-      <div class="liste_projets">
-  
-        <div class="projet">
-          <img src="./ressources/image_stage.png" alt="">
-          <div class="projet_desc">
-            <h3>Art on Tattoo</h3><br>
-            <p><span>Javascript</span> | <span>HTML</span> | <span>CSS</span></p>
-            <p style="margin: 5px 0;">Art on Tattoo est un site WEB pour un salon de tatouage situé à Bouchain, ce site a été mon stage de première année de BTS SIO.</p>
-            <a href="https://artontattoo.fr/" target="blank" class="btn-projet">Consulter</a>
-          </div>
-        </div>
 
-        <div class="projet">
-          <img src="./ressources/mastermind.png" alt="">
-          <div class="projet_desc">
-            <h3>Mastermind</h3><br>
-            <p><span>Javascript</span> | <span>HTML</span> | <span>CSS</span></p>
-            <p style="margin: 5px 0;">Le Mastermind est un tp de seconde année visant à refaire ce classique des jeux. Le but était d'utiliser uniquement du JavaScript pour le faire.</p>
-            <a href="https://su-apt-install-wayz.github.io/mastermind/" target="blank" class="btn-projet">Consulter</a>
-          </div>
-        </div>
+            <section id="projets" class="projects reveal">
+                <h2>Projets</h2>
 
-        <div class="projet">
-          <img src="./ressources/doctur.png" alt="">
-          <div class="projet_desc">
-            <h3>DocTur</h3><br>
-            <p><span>Javascript</span> | <span>HTML</span> | <span>CSS</span> | <span>PHP</span></p>
-            <p style="margin: 5px 0;">DocTur etait au début un simple entrainement aux connexions, publications de documents, droits à accéder à certaines pages,... grâce au
-              languages PHP pour moi organisé par mon ami <a href="https://arthur-bourst.fr/" target="blank">Arthur Bourst</a>. Au final le projet s'est agrandi petit à petit pour en devenir un systeme de Cloud personnel comme Proton Drive,
-              Google Drive, DropBox ... Etant donné que je ne possède pas de serveur WEB avec PHP et MySQL, il ne peut être mis en ligne.
-          </p>
-          </div>
-        </div>
+                <div class="liste_projets">
 
-        <div class="projet">
-          <img src="./ressources/lpf.png" alt="">
-          <div class="projet_desc">
-            <h3>CliniqueLPF</h3><br>
-            <p><span>Javascript</span> | <span>HTML</span> | <span>CSS</span> | <span>PHP</span></p>
-            <p style="margin: 5px 0;">La CliniqueLPF est un projet d'AP pour l'épreuve E5 du BTS SIO. Celui-ci a été fait en groupe avec 2 développeurs (<a href="https://robynfrancois.fr/" target="blank">Robyn François</a> et moi-même) et un administrateur Réseaux (<a href="https://ledieualexandre.wixsite.com/aledieu" target="blank">Alexandre Ledieu</a>), et son but était de pouvoir créer des utilisateurs ayant des rôles pouvant créer, modifier, supprimer des admissions, des services ...</p>
-          </div>
-        </div>
-  
-      </div> 
-    </section>
+                    <div class="projet">
+                        <img src="./ressources/projets/doctur/login.PNG" alt="">
+                        <div class="description">
+                            <h3>DocTur</h3>
+                            <div class="technos">
+                                <p data-cursor="-black">HTML</p>
+                                <p data-cursor="-black">CSS</p>
+                                <p data-cursor="-black">PHP</p>
+                                <p data-cursor="-black">JS</p>
+                                <p data-cursor="-black">SQL</p>
+                            </div>
+                            <p>DocTur etait au début un simple entrainement aux connexions, publications de documents,
+                                droits à accéder à certaines pages,... grâce au
+                                languages PHP pour moi organisé par mon ami <a data-cursor="-black"
+                                    href="https://arthur-bourst.fr/" target="blank">Arthur Bourst <span
+                                        class="material-symbols-rounded">open_in_new</span></a>. Au final le projet
+                                s'est agrandi petit à petit pour en devenir un systeme de Cloud personnel comme Proton
+                                Drive,
+                                Google Drive, DropBox ... Etant donné que je ne possède pas de serveur WEB avec PHP et
+                                MySQL, il ne peut être mis en ligne.
+                            </p>
+                            <a data-cursor="-black" class="goToProject" data-target="doctur">Voir le projet</a>
+                        </div>
+                    </div>
 
-    <section class="certifs reveal" id="certifs">
-      <h2 class="titre_section">Certifications</h2>
+                    <hr>
 
-      <div class="liste-certifs">
+                    <div class="projet">
+                        <img src="./ressources/projets/clinique/login.PNG" alt="">
+                        <div class="description">
+                            <h3>Clinique LPF</h3>
+                            <div class="technos">
+                                <p data-cursor="-black">HTML</p>
+                                <p data-cursor="-black">CSS</p>
+                                <p data-cursor="-black">PHP</p>
+                                <p data-cursor="-black">JS</p>
+                                <p data-cursor="-black">SQL</p>
+                            </div>
+                            <p>La CliniqueLPF est un projet d'AP pour l'épreuve E5 du BTS SIO. Celui-ci a été fait en
+                                groupe avec 2 développeurs (<a data-cursor="-black" href="https://robynfrancois.fr/"
+                                    target="blank">Robyn
+                                    François <span class="material-symbols-rounded">open_in_new</span></a> et moi-même)
+                                et un administrateur Réseaux (<a data-cursor="-black"
+                                    href="https://ledieualexandre.wixsite.com/aledieu" target="blank">Alexandre
+                                    Ledieu <span class="material-symbols-rounded">open_in_new</span></a>), et son but
+                                était de pouvoir créer des utilisateurs ayant des rôles
+                                pouvant créer, modifier, supprimer des admissions, des services ...
+                            </p>
+                            <a data-cursor="-black" class="goToProject" data-target="clinique">Voir le projet</a>
+                        </div>
+                    </div>
 
-        <div class="certif">
-          <p class="date-certif">08/10/2022</p>
-          <h3 class="titre-certif"><iconify-icon icon="ant-design:safety-certificate-outlined" style="color: #9fffec;" width="40" height="40"></iconify-icon> ANSSI</h3>
-          <h4 class="stitre-certif">Certification MOOC ANSSI</h4>
-          <p class="desc-certif">Obtenu avec une moyenne de 87%.</p>
-          <a target="_blank" href="./ressources/wustenberghs-anssi.pdf"><button class="btn-certif">Voir</button></a> 
-        </div>
-  
-        <div class="certif">
-          <p class="date-certif">12/10/2022</p>
-          <h3 class="titre-certif"><iconify-icon icon="ant-design:safety-certificate-outlined" style="color: #9fffec;" width="40" height="40"></iconify-icon> RGPD</h3>
-          <h4 class="stitre-certif">Certification Atelier RGPD</h4>
-          <p class="desc-certif">Obtenu avec une moyenne de 87,8%.</p>
-          <a target="_blank" href="./ressources/wustenberghs-rgpd.pdf"><button class="btn-certif">Voir</button></a> 
-        </div>
-  
-        <div class="certif">
-          <p class="date-certif">08/10/2022</p>
-          <h3 class="titre-certif"><iconify-icon icon="ant-design:safety-certificate-outlined" style="color: #9fffec;" width="40" height="40"></iconify-icon> PIX</h3>
-          <h4 class="stitre-certif">Certification PIX</h4>
-          <p class="desc-certif">Obtenu avec un score de .</p>
-          <a target="_blank" href="./ressources/wustenberghs-pix.pdf"><button class="btn-certif">Voir</button></a>  
-        </div>
-  
-      </div>
-    </section>
+                    <!-- <hr> -->
 
-  </section>
+                    <!-- <div class="projet">
+                        <img src="./ressources/projets/mastermind/projet.png" alt="">
+                        <div class="description">
+                            <h3>TheWikiCrew</h3>
+                            <div class="technos">
+                                <p data-cursor="-black">HTML</p>
+                                <p data-cursor="-black">CSS</p>
+                                <p data-cursor="-black">PHP</p>
+                                <p data-cursor="-black">JS</p>
+                                <p data-cursor="-black">SQL</p>
+                            </div>
+                            <p>TheWikiCrew est une wiki basé sur le jeu <a data-cursor="-black" target="blank"
+                                    href="https://www.ubisoft.com/fr-fr/game/the-crew/the-crew-2">The Crew 2 <span
+                                        class="material-symbols-rounded">open_in_new</span></a> et <a
+                                    data-cursor="-black" target="blank"
+                                    href="https://www.ubisoft.com/fr-fr/game/the-crew/motorfest">The Crew Motorfest
+                                    <span class="material-symbols-rounded">open_in_new</span></a> prochainement pour les
+                                joueurs de ce jeu de course en
+                                monde ouvert fait en collaboration avec <a data-cursor="-black"
+                                    href="https://arthur-bourst.fr/" target="blank">Arthur Bourst <span
+                                        class="material-symbols-rounded">open_in_new</span></a>. Il fournit des
+                                informations détaillées sur les véhicules, les cartes et
+                                lieux, les défis de course, ainsi que des conseils pour aider les
+                                joueurs à améliorer leurs performances, optimiser leur progression et découvrir les
+                                secrets du jeu.
+                            </p>
+                            <a data-cursor="-black" class="goToProject" data-target="wikicrew">Voir le projet</a>
+                        </div>
+                    </div> -->
 
-  <footer>
-    <div class="footer_ligne">
-      <div class="footer_item">
-        <h3>Portfolio</h3>
-        <p>Merci d'avoir visité mon portfolio !</p>
-        <div id="reseaux" style="display: flex; gap: 20px;">
-          <a target="blank" href="https://github.com/su-apt-install-wayz"><div class="hexagone"><i class="ri-github-fill"></i></div></a>
-          <a target="blank" href="https://fr.linkedin.com/in/theo-wustenberghs-a92b0321b?original_referer=https%3A%2F%2Fwww.google.com%2F"><div class="hexagone"><i class="ri-linkedin-box-fill"></i></div></a>
+                    <!-- <hr> -->
+
+                    <!-- <div class="projet">
+                        <img src="./ressources/projets/mastermind/projet.png" alt="">
+                        <div class="description">
+                            <h3>EZKEYZ</h3>
+                            <div class="technos">
+                                <p data-cursor="-black">HTML</p>
+                                <p data-cursor="-black">CSS</p>
+                                <p data-cursor="-black">PHP</p>
+                                <p data-cursor="-black">JS</p>
+                                <p data-cursor="-black">SQL</p>
+                            </div>
+                            <p>DocTur etait au début un simple entrainement aux connexions, publications de documents,
+                                droits à accéder à certaines pages,... grâce au
+                                languages PHP pour moi organisé par mon ami <a data-cursor="-black"
+                                    href="https://arthur-bourst.fr/" target="blank">Arthur Bourst <span
+                                        class="material-symbols-rounded">open_in_new</span></a>. Au final le projet
+                                s'est agrandi petit à petit pour en devenir un systeme de Cloud personnel comme Proton
+                                Drive,
+                                Google Drive, DropBox ... Etant donné que je ne possède pas de serveur WEB avec PHP et
+                                MySQL, il ne peut être mis en ligne.
+                            </p>
+                            <a data-cursor="-black" class="goToProject" data-target="ezkeyz">Voir le projet</a>
+                        </div>
+                    </div> -->
+
+                    <hr>
+
+                    <div class="projet">
+                        <img src="./ressources/projets/mastermind/home.JPG" alt="">
+                        <div class="description">
+                            <h3>Mastermind</h3>
+                            <div class="technos">
+                                <p data-cursor="-black">HTML</p>
+                                <p data-cursor="-black">CSS</p>
+                                <p data-cursor="-black">JS</p>
+                            </div>
+                            <p>Le Mastermind est un TP de BTS SIO visant à refaire ce classique des jeux de société. Le
+                                but était d'utiliser uniquement le JavaScript pour le faire.
+                                Comme j'ai aimé faire ce projet, j'ai décidé de l'héberger sur Github, et il est donc
+                                accessible via ce <a data-cursor="-black"
+                                    href="https://su-apt-install-wayz.github.io/mastermind/" target="blank">lien <span
+                                        class="material-symbols-rounded">open_in_new</span></a>.
+                            </p>
+                            <a data-cursor="-black" class="goToProject" data-target="mastermind">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </div>
-      </div>
-      <div class="footer_item">
-        <h3>Contact</h3>
-        <a href="mailto:theo.wustenberghs@proton.me">theo.wustenberghs@proton.me</a>
-      </div>
-    </div><hr>
-    <div style="max-width: none;" class="footer_ligne">
-      <p>Wustenberghs Théo &copy <span id="year"></span> - Tous droits réservés</p>
-      <a href="mentions.html">Mentions légales</a>
+    </main>
+
+
+
+    <div class="footer_button">
+        <div data-cursor="-black" class="touche" id="laTouche">
+            <p onclick="enableFooter()" id="touche" class="material-symbols-rounded">touch_app</p>
+        </div>
     </div>
-  </footer>
 
-  <script>
-    const year = document.getElementById('year');
-    year.innerHTML = new Date().getFullYear();
-  </script>
+    <footer class="footer" id="footer">
+        <div class="footer_content">
+            <div class="footer_list">
+                <a data-cursor="-black" href="mentions.html" class="footer_item">Mentions légales</a>
+                <a data-cursor="-black" href="mailto:theo.wustenberghs@proton.me" class="footer_item">Contact</a>
+            </div>
+            <span>
+                <p id="year"></p>
+                <p>Website by Wustenberghs Théo.</p>
+            </span>
+        </div>
 
-  <script src="./script/main.js"></script>
-    
+        <span onclick="disableFooter()" class="material-symbols-rounded close_footer">close</span>
+
+        <img src="./ressources/icone_footer.png" alt="">
+    </footer>
+
+    <script src="./js/footer.js"></script>
+
+    <div class="modal" id="doctur">
+        <div class="header">
+            <span>
+                <h3>DocTur</h3>
+                <div class="mac_bubles">
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                </div>
+            </span>
+            <span onclick="disableModal('doctur')" class="material-symbols-rounded close_modal">close</span>
+        </div>
+        <div class="body">
+            <div class="left"></div>
+            <div class="right">
+                <div class="slider">
+                    <span class="active">
+                        <h4>Page de connexion</h4><img src="./ressources/projets/doctur/login.PNG"
+                            alt="DocTur | Page de connexion">
+                    </span>
+                    <span>
+                        <h4>Page d'inscription</h4><img src="./ressources/projets/doctur/register.PNG"
+                            alt="DocTur | Page d'inscription">
+                    </span>
+                    <span>
+                        <h4>Page d'accueil</h4><img src="./ressources/projets/doctur/home.PNG"
+                            alt="DocTur | Page d'accueil">
+                    </span>
+                    <span>
+                        <h4>Page des favoris</h4><img src="./ressources/projets/doctur/fav.PNG"
+                            alt="DocTur | Page des favoris">
+                    </span>
+                    <span>
+                        <h4>Page du dossier</h4><img src="./ressources/projets/doctur/folder.PNG"
+                            alt="DocTur | Page du dossier">
+                    </span>
+                </div>
+                <div class="slider-nav">
+                    <span class="arrow"><span data-cursor="-black"
+                            class="material-symbols-rounded previous">arrow_left_alt</span></span>
+                    <span class="arrow"><span data-cursor="-black"
+                            class="material-symbols-rounded next">arrow_right_alt</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="clinique">
+        <div class="header">
+            <span>
+                <h3>Clinique LPF</h3>
+                <div class="mac_bubles">
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                </div>
+            </span>
+            <span onclick="disableModal('clinique')" class="material-symbols-rounded close_modal">close</span>
+        </div>
+        <div class="body">
+            <div class="left"></div>
+            <div class="right">
+                <div class="slider">
+                    <span class="active">
+                        <h4>Page de connexion</h4><img src="./ressources/projets/clinique/login.PNG"
+                            alt="Clinique LPF | Page de connexion">
+                    </span>
+                    <span>
+                        <h4>Page d'accueil Secrétaire</h4><img src="./ressources/projets/clinique/home.PNG"
+                            alt="Clinique LPF | Page d'accueil Secrétaire">
+                    </span>
+                    <span>
+                        <h4>Page admission (Patient)</h4><img src="./ressources/projets/clinique/admission1.PNG"
+                            alt="Clinique LPF | Page admission (patient)">
+                    </span>
+                    <span>
+                        <h4>Page admission (Hospitalisation)</h4><img src="./ressources/projets/clinique/admission2.PNG"
+                            alt="Clinique LPF | Page admission (hospitalisation)">
+                    </span>
+                    <span>
+                        <h4>Page admission (Couverture sociale)</h4><img
+                            src="./ressources/projets/clinique/admission3.PNG"
+                            alt="Clinique LPF | Page admission (Couverture sociale)">
+                    </span>
+                    <span>
+                        <h4>Page admission (Documents)</h4><img src="./ressources/projets/clinique/admission4.PNG"
+                            alt="Clinique LPF | Page admission (Documents)">
+                    </span>
+                    <span>
+                        <h4>Page d'accueil Médecin</h4><img src="./ressources/projets/clinique/home_doctor.PNG"
+                            alt="Clinique LPF | Page d'accueil Médecin">
+                    </span>
+                </div>
+                <div class="slider-nav">
+                    <span class="arrow"><span data-cursor="-black"
+                            class="material-symbols-rounded previous">arrow_left_alt</span></span>
+                    <span class="arrow"><span data-cursor="-black"
+                            class="material-symbols-rounded next">arrow_right_alt</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="modal" id="wikicrew">
+        <div class="header">
+            <span>
+                <h3>TheWikiCrew</h3>
+                <div class="mac_bubles">
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                </div>
+            </span>
+            <span onclick="disableModal('wikicrew')" class="material-symbols-rounded close_modal">close</span>
+        </div>
+    </div> -->
+
+    <!-- <div class="modal" id="ezkeyz">
+        <div class="header">
+            <span>
+                <h3>EZKEYZ</h3>
+                <div class="mac_bubles">
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                </div>
+            </span>
+            <span onclick="disableModal('ezkeyz')" class="material-symbols-rounded close_modal">close</span>
+        </div>
+    </div> -->
+
+    <div class="modal" id="mastermind">
+        <div class="header">
+            <span>
+                <h3>Mastermind</h3>
+                <div class="mac_bubles">
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                    <div class="mac_buble"></div>
+                </div>
+            </span>
+            <span onclick="disableModal('mastermind')" class="material-symbols-rounded close_modal">close</span>
+        </div>
+        <div class="body">
+            <div class="left"></div>
+            <div class="right">
+                <div class="slider">
+                    <span class="active">
+                        <h4>Page d'accueil</h4><img src="./ressources/projets/mastermind/home.JPG"
+                            alt="Mastermind | Page d'accueil">
+                    </span>
+                    <span>
+                        <h4>Page du jeu en Facile</h4><img src="./ressources/projets/mastermind/game_easy.JPG"
+                            alt="Mastermind | Page du jeu en Facile">
+                    </span>
+                    <span>
+                        <h4>Page du jeu en Moyen</h4><img src="./ressources/projets/mastermind/game_medium.JPG"
+                            alt="Mastermind | Page du jeu en Moyen">
+                    </span>
+                    <span>
+                        <h4>Page du jeu en Difficile</h4><img src="./ressources/projets/mastermind/game_hard.JPG"
+                            alt="Mastermind | Page du jeu en Difficile">
+                    </span>
+                    <span>
+                        <h4>Page des Scores</h4><img src="./ressources/projets/mastermind/scores.JPG"
+                            alt="Mastermind | Page des Scores">
+                    </span>
+                </div>
+                <div class="slider-nav">
+                    <span class="arrow"><span data-cursor="-black"
+                            class="material-symbols-rounded previous">arrow_left_alt</span></span>
+                    <span class="arrow"><span data-cursor="-black"
+                            class="material-symbols-rounded next">arrow_right_alt</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/accordion.js"></script>
+    <script src="./js/slider.js"></script>
+
+    <script>
+        const touche = document.getElementById('touche');
+        // Vérifier si l'appareil est un mobile ou une tablette
+        function estMobileOuTablette() {
+            return (typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Vérifier si l'appareil prend en charge les écrans tactiles
+        function prendEnChargeEcranTactile() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints;
+        }
+
+        // Exemple d'utilisation
+        if (!estMobileOuTablette()) {
+            var cursor = new MouseFollower();
+            touche.classList.remove('material-symbols-rounded');
+            touche.innerText = "F";
+        }
+
+        if (!prendEnChargeEcranTactile()) {
+            var cursor = new MouseFollower();
+            touche.classList.remove('material-symbols-rounded');
+            touche.innerText = "F";
+        }
+    </script>
+
 </body>
+
 </html>
