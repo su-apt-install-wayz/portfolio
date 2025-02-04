@@ -39,13 +39,14 @@ section h2::after {
 }
 
 section.home {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
     max-width: 1500px;
+    position: relative;
 }
 
 section.home .left {
